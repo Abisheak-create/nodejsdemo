@@ -1,0 +1,18 @@
+
+
+sudo: required
+
+services: 
+  -docker
+
+before_install:
+
+        - docker pull node:latest
+        - docker build -t coreapitest .
+
+script:
+
+        - docker run coreapitest npm run test        
+        
+
+
